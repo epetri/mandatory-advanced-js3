@@ -1,0 +1,34 @@
+.App{
+  background-image: linear-gradient(to top, #553aee, #5b47eb, #6152e8, #675ce4, #6e66e0, #6a62da, #655ed3, #615acd, #5048c3, #3f36b9, #2a22af, #0908a4);
+  height: 100vh;
+  width: 100vw;
+  text-align: center;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-container {
+  border: 2px solid white;
+  border-radius: 30px;
+  width: 400px;
+  height: 400px;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+.nav-link {
+  text-decoration: none;
+  margin: 50px;
+  color: white;
+
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+.nav-link:active {
+  color: white;
+}
