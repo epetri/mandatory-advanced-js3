@@ -19,12 +19,6 @@ class App extends Component {
 
   componentDidMount(){     
     this.subscription = token$.subscribe( (token) => this.setState({ token }));  
-    const decoded = jwt.decode(token$.value);
-    console.log(decoded.email); 
-
-    this.setState({email: decoded.email})
-
-    
   }
  
    componentWillUnmount(){
@@ -32,7 +26,9 @@ class App extends Component {
    }
 
   render() {
-   const token = this.state.token;    
+   const token = this.state.token;   
+   
+   
 
     return (
       <Router>
@@ -42,7 +38,7 @@ class App extends Component {
                 <nav className='header-nav'>
                   {token ? <Link className='nav-link' to= '/logout'>Logout</Link> : <Link className='nav-link' to= '/'>login </Link> } 
                   {token ? <Link className='nav-link' to= '/home'>home</Link> : <Link className='nav-link' to= '/register'>Create account</Link>}
-                  {token ? <p>{this.state.email}</p> : null }
+                  {token ? <p>{jwt.decode(token).email}</p> : null }
                 </nav>
               </header>
               <Route exact path= '/' component={login}/>
